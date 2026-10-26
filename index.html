@@ -39,7 +39,7 @@ small{color:var(--mu)}
 <b>التسميع</b>
 <div class="row"><button id="mic">🎙️ ابدأ التسميع</button></div>
 <textarea id="txt" lang="ar" dir="rtl" placeholder="يظهر هنا نص تسميعك. يمكنك أيضًا الإملاء بميكروفون لوحة المفاتيح."></textarea>
-<label style="display:block;margin-top:8px;font-size:.9rem"><input type="checkbox" id="snd" checked> أرسل نتيجتي وتسجيل تلاوتي إلى صاحب التطبيق (عبر تيليغرام)</label>
+<label style="display:block;margin-top:8px;font-size:.9rem"><input type="checkbox" id="snd" checked> تحقّق من تلاوتي بتسجيل صوتي يُرسل إلى صاحب التطبيق (عبر تيليغرام)</label>
 <div class="row"><button id="cmp">قارن</button><button class="g" id="skip">تخطَّ المقطع</button><button class="g" id="rst">ابدأ من جديد</button></div>
 <div id="msg"></div>
 <small>المقارنة آلية وقد تخطئ في التعرف على الكلمات، فراجع حفظك مع معلّم متقن.</small>
@@ -53,7 +53,7 @@ small{color:var(--mu)}
 <script>
 var V=["وَالسَّمَاءِ ذَاتِ الْبُرُوجِ","وَالْيَوْمِ الْمَوْعُودِ","وَشَاهِدٍ وَمَشْهُودٍ","قُتِلَ أَصْحَابُ الْأُخْدُودِ","النَّارِ ذَاتِ الْوَقُودِ","إِذْ هُمْ عَلَيْهَا قُعُودٌ","وَهُمْ عَلَىٰ مَا يَفْعَلُونَ بِالْمُؤْمِنِينَ شُهُودٌ","وَمَا نَقَمُوا مِنْهُمْ إِلَّا أَنْ يُؤْمِنُوا بِاللَّهِ الْعَزِيزِ الْحَمِيدِ","الَّذِي لَهُ مُلْكُ السَّمَاوَاتِ وَالْأَرْضِ ۚ وَاللَّهُ عَلَىٰ كُلِّ شَيْءٍ شَهِيدٌ","إِنَّ الَّذِينَ فَتَنُوا الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ ثُمَّ لَمْ يَتُوبُوا فَلَهُمْ عَذَابُ جَهَنَّمَ وَلَهُمْ عَذَابُ الْحَرِيقِ","إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ لَهُمْ جَنَّاتٌ تَجْرِي مِنْ تَحْتِهَا الْأَنْهَارُ ۚ ذَٰلِكَ الْفَوْزُ الْكَبِيرُ","إِنَّ بَطْشَ رَبِّكَ لَشَدِيدٌ","إِنَّهُ هُوَ يُبْدِئُ وَيُعِيدُ","وَهُوَ الْغَفُورُ الْوَدُودُ","ذُو الْعَرْشِ الْمَجِيدُ","فَعَّالٌ لِمَا يُرِيدُ","هَلْ أَتَاكَ حَدِيثُ الْجُنُودِ","فِرْعَوْنَ وَثَمُودَ","بَلِ الَّذِينَ كَفَرُوا فِي تَكْذِيبٍ","وَاللَّهُ مِنْ وَرَائِهِمْ مُحِيطٌ","بَلْ هُوَ قُرْآنٌ مَجِيدٌ","فِي لَوْحٍ مَحْفُوظٍ"];
 var T=[[1,9,"أقسم الله تعالى بالسماء ذات المنازل التي تمر بها الشمس والقمر، وبيوم القيامة الذي وعد الله الخلق أن يجمعهم فيه، وشاهد يشهد، ومشهود يشهد عليه. ويقسم الله- سبحانه- بما يشاء من مخلوقاته، أما المخلوق فلا يجوز له أن يقسم بغير الله، فإن القسم بغير الله شرك. لُعن الذين شَقُّوا في الأرض شقًا عظيمًا؛ لتعذيب المؤمنين، وأوقدوا النار الشديدة ذات الوَقود، إذ هم قعود على الأخدود ملازمون له، وهم على ما يفعلون بالمؤمنين من تنكيل وتعذيب حضورٌ. وما أخذوهم بمثل هذا العقاب الشديد إلا أن كانوا مؤمنين بالله العزيز الذي لا يغالَب، الحميد في أقواله وأفعاله وأوصافه، الذي له ملك السماوات والأرض، وهو- سبحانه- على كل شيء شهيد، لا يخفى عليه شيء."],[10,10,"إن الذين حرقوا المؤمنين والمؤمنات بالنار؛ ليصرفوهم عن دين الله، ثم لم يتوبوا، فلهم في الآخرة عذاب جهنم، ولهم العذاب الشديد المحرق."],[11,11,"إن الذين صدَّقوا الله ورسوله وعملوا الأعمال الصالحات، لهم جنات تجري من تحت قصورها الأنهار، ذلك الفوز العظيم."],[12,16,"إن انتقام ربك من أعدائه وعذابه لهم لَعظيم شديد، إنه هو يُبدئ الخلق ثم يعيده، وهو الغفور لمن تاب، كثير المودة والمحبة لأوليائه، صاحب العرشِ المجيدُ الذي بلغ المنتهى في الفضل والكرم، فَعَّال لما يريد، لا يمتنع عليه شيء يريده."],[17,22,"هل بلغك -أيها الرسول- خبر الجموع الكافرة المكذبة لأنبيائها، فرعون وثمود، وما حلَّ بهم من العذاب والنكال، لم يعتبر القوم بذلك، بل الذين كفروا في تكذيب متواصل كدأب مَن قبلهم، والله قد أحاط بهم علما وقدرة، لا يخفى عليه منهم ومن أعمالهم شيء. وليس القرآن كما زعم المكذبون المشركون بأنه شعر وسحر، فكذَّبوا به، بل هو قرآن عظيم كريم، في لوح محفوظ، لا يناله تبديل ولا تحريف."]];
-var PER=2,K="burooj-i",i=0,sr=null,rc=null,ch=[],blob=null,stream=null,HOOK="https://abw1212.app.n8n.cloud/webhook/burooj-9f3k2x7q4m";
+var PER=2,K="burooj-i",i=0,sr=null,rc=null,ch=[],blob=null,stream=null,HOOK="https://abw1212.app.n8n.cloud/webhook/burooj-v2-5h8w3n2c";
 try{i=parseInt(localStorage.getItem(K)||"0",10)||0}catch(e){}
 function $(id){return document.getElementById(id)}
 function save(){try{localStorage.setItem(K,String(i))}catch(e){}}
@@ -84,46 +84,52 @@ function compare(){
   var ok=new Array(n).fill(false);a=n;b=m;
   while(a>0&&b>0){if(exp[a-1]===got[b-1]){ok[a-1]=true;a--;b--}else if(dp[a-1][b]>=dp[a][b-1]){a--}else{b--}}
   var miss=exp.filter(function(w,k){return !ok[k]}),pct=Math.round((n-miss.length)/n*100);
-  send(pct,miss,pct>=90,(i+1)+"-"+Math.min(i+PER,V.length));if(pct>=90){i=Math.min(i+PER,V.length);save();$("txt").value="";render();say("✅ أحسنت! تطابق تسميعك "+pct+"%. انتقلنا للمقطع التالي.","ok")}
+  if(pct>=90){i=Math.min(i+PER,V.length);save();$("txt").value="";render();say("✅ أحسنت! تطابق تسميعك "+pct+"%. انتقلنا للمقطع التالي.","ok")}
   else{say("نسبة التطابق "+pct+"%."+(miss.length?"\nكلمات لم أتبيّنها: "+miss.slice(0,10).join("، "):"")+"\nأعد المحاولة.","bad")}
 }
 $("cmp").onclick=compare;
 $("skip").onclick=function(){i=Math.min(i+PER,V.length);save();$("txt").value="";say("");render()};
 $("rst").onclick=function(){i=0;save();$("txt").value="";say("");render()};
-function stopRec(){try{if(rc&&rc.state!=="inactive"){rc.stop()}}catch(e){}}
-function startRec(){
-  blob=null;ch=[];
-  if(!$("snd").checked||!navigator.mediaDevices||!window.MediaRecorder){return Promise.resolve()}
-  return navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){
-    stream=st;rc=new MediaRecorder(st);
+function stopRec(){}
+function micRecord(){
+  if(rc&&rc.state==="recording"){rc.stop();return}
+  if(!navigator.mediaDevices||!window.MediaRecorder){say("التسجيل غير مدعوم في هذا المتصفح. ألغِ التأشير واستخدم الإملاء.","bad");return}
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){
+    ch=[];stream=st;rc=new MediaRecorder(st);
     rc.ondataavailable=function(e){if(e.data&&e.data.size){ch.push(e.data)}};
-    rc.onstop=function(){blob=new Blob(ch,{type:rc.mimeType||"audio/webm"});try{stream.getTracks().forEach(function(t){t.stop()})}catch(x){}};
-    rc.start();
-  }).catch(function(){rc=null});
+    rc.onstop=function(){
+      try{stream.getTracks().forEach(function(t){t.stop()})}catch(x){}
+      $("mic").textContent="🎙️ ابدأ التسميع";
+      var b=new Blob(ch,{type:rc.mimeType||"audio/webm"});
+      if(b.size<1500){say("لم يُسجَّل صوت. حاول مرة أخرى.","bad");return}
+      upload(b);
+    };
+    rc.start();$("mic").textContent="⏹️ إيقاف التسجيل";say("جارٍ التسجيل... اقرأ المقطع ثم اضغط إيقاف.");
+  }).catch(function(e){say("تعذّر الوصول للميكروفون ("+(e&&e.name?e.name:"")+"). اسمح للمتصفح باستخدام الميكروفون.","bad")});
 }
-function send(pct,miss,ok,vs){
-  if(!$("snd").checked){return}
-  var txt=$("txt").value;
-  setTimeout(function(){
-    var f=new FormData();
-    f.append("pct",String(pct));f.append("verses",vs);f.append("passed",ok?"true":"false");
-    f.append("missing",miss.join("، "));f.append("spoken",txt);
-    if(blob){f.append("audio",blob,"recitation.webm")}
-    try{fetch(HOOK,{method:"POST",body:f}).catch(function(){})}catch(e){}
-    blob=null;
-  },400);
+function upload(b){
+  var f=new FormData();
+  f.append("expected",V.slice(i,i+PER).join(" "));f.append("verses",(i+1)+"-"+Math.min(i+PER,V.length));f.append("audio",b,"recitation.webm");
+  say("جارٍ التحقق من تلاوتك...");$("mic").disabled=true;
+  fetch(HOOK,{method:"POST",body:f}).then(function(r){return r.json()}).then(function(d){
+    $("mic").disabled=false;
+    if(!d||d.ok!==true){say("تعذّر تفريغ التسجيل. حاول مرة أخرى.","bad");return}
+    $("txt").value=d.spoken||"";
+    var pct=parseInt(d.pct,10)||0;
+    if(d.passed===true||d.passed==="true"){i=Math.min(i+PER,V.length);save();render();say("✅ أحسنت! تطابق تسميعك "+pct+"%. انتقلنا للمقطع التالي.","ok")}
+    else{say("نسبة التطابق "+pct+"%."+(d.missing?"\nكلمات لم أتبيّنها: "+d.missing:"")+"\nأعد المحاولة.","bad")}
+  }).catch(function(){$("mic").disabled=false;say("تعذّر الاتصال بالخادم. حاول لاحقًا.","bad")});
 }
 $("mic").onclick=function(){
+  if($("snd").checked){micRecord();return}
   var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(sr){sr.stop();stopRec();return}
+  if(sr){sr.stop();return}
   if(!SR){say("التعرف على الصوت غير متاح هنا. استخدم ميكروفون لوحة المفاتيح للإملاء في المربع.","bad");return}
-  startRec().then(function(){
-    sr=new SR();sr.lang="ar-SA";sr.continuous=true;sr.interimResults=false;
-    sr.onresult=function(e){var s2=[];for(var k=0;k<e.results.length;k++){s2.push(e.results[k][0].transcript)}$("txt").value=s2.join(" ")};
-    sr.onerror=function(e){var c=e&&e.error?e.error:"";stopRec();say("تعذّر التسجيل ("+c+"). حاول مرة أخرى أو استخدم الإملاء من لوحة المفاتيح.","bad");sr=null;$("mic").textContent="🎙️ ابدأ التسميع"};
-    sr.onend=function(){sr=null;stopRec();$("mic").textContent="🎙️ ابدأ التسميع"};
-    try{sr.start();$("mic").textContent="⏹️ إيقاف التسجيل";say("")}catch(e){sr=null;stopRec();say("تعذّر بدء التسجيل.","bad")}
-  });
+  sr=new SR();sr.lang="ar-SA";sr.continuous=true;sr.interimResults=false;
+  sr.onresult=function(e){var s2=[];for(var k=0;k<e.results.length;k++){s2.push(e.results[k][0].transcript)}$("txt").value=s2.join(" ")};
+  sr.onerror=function(e){var c=e&&e.error?e.error:"";say("تعذّر التسجيل ("+c+"). حاول مرة أخرى أو استخدم الإملاء من لوحة المفاتيح.","bad");sr=null;$("mic").textContent="🎙️ ابدأ التسميع"};
+  sr.onend=function(){sr=null;$("mic").textContent="🎙️ ابدأ التسميع"};
+  try{sr.start();$("mic").textContent="⏹️ إيقاف التسجيل";say("")}catch(e){sr=null;say("تعذّر بدء التسجيل.","bad")}
 };
 render();
 </script>
